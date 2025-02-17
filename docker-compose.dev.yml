@@ -31,7 +31,7 @@ services:
         ports:
             - "8080:80"
         volumes:
-            - ./client:/usr/local/apache2/htdocs
+            - ./front:/usr/local/apache2/htdocs
         networks:
             - curriculum
         stop_grace_period: 1s
