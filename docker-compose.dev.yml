@@ -14,7 +14,7 @@ services:
     #     container_name: API
     #     ports:
     #         - "5000:5000"
-    #     working_dir: /server
+    #     working_dir: /back
     #     command: sh -c "npm install && npm run dev"
     #     environment:
     #         - NODE_ENV=dev
@@ -24,13 +24,26 @@ services:
     #         - curriculum
     #     stop_grace_period: 1s
     client:
-        build: ./front
+        image: node:20
         container_name: front
         ports:
-            - "5173:5173"
+            - "3000:5173"
+        working_dir: /front
         command: sh -c "npm install && npm run dev"
         volumes:
             - ./front:/front
+        networks:
+            - curriculum
+        stop_grace_period: 1s
+    admin:
+        image: node:20
+        container_name: admin
+        ports:
+            - "3001:5173"
+        working_dir: /admin
+        command: sh -c "npm install && npm run dev"
+        volumes:
+            - ./admin:/admin
         networks:
             - curriculum
         stop_grace_period: 1s
