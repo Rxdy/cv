@@ -7,8 +7,6 @@ run: vscode gitPull
 
 reset: down up
 
-retry: down stop build
-
 up:
 	docker compose -f docker-compose.$(ENV).yml up $(option)
 
@@ -25,4 +23,5 @@ stop:
 	docker compose -f docker-compose.$(ENV).yml stop
 
 build:
-	docker compose -f docker-compose.$(ENV).yml build
+	docker run --rm node:20 -v ./front:./app -w /app npm install
+	$(MAKE) run

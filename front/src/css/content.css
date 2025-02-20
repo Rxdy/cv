@@ -1,0 +1,66 @@
+#content {
+    background: white;
+    height: 100%;
+    width: 67%;
+    padding: 0% 3%;
+}
+
+#content section h3 {
+    text-align: left;
+    font-weight: 500;
+}
+
+.formation {
+    margin-top: 5px;
+    width: auto;
+    padding: 2px 5px 7px 5px;
+    border-radius: 5px;
+    outline: 0px solid rgba(33, 83, 123, 0);
+    font-size: 8px;
+    border: 1px solid #e5e7eb;
+    transition: background 10s ease-out;
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    transition: color 0.3s ease-out 0.2s;
+}
+.formation .test {
+    background: #21527b;
+    z-index: 0;
+    width: 102%;
+    height: 0px;
+    margin: 0px;
+    top: -10px;
+    left: -2px;
+    transition: height 0.3s ease-in;
+
+    position: absolute;
+}
+.formation:hover .test {
+    height: 50px;
+    transition: height 0.3s ease-out;
+}
+.formation:hover {
+    color: white;
+    transition: color 0.3s ease-out;
+}
+
+.formation header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    position: relative;
+}
+.formation h1 {
+    font-size: 8px;
+}
+.formation header p {
+    font-size: 6px;
+    color: rgb(165, 148, 148);
+    font-style: italic;
+}
+.formation p {
+    position: relative;
+    font-size: 6px;
+}
